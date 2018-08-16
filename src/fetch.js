@@ -23,10 +23,7 @@ module.exports = async ({ apiURL, contentType, jwtToken }) => {
   console.timeEnd('Fetch Strapi data')
 
   // Map and clean data.
-  return documents.data.map(item => {
-    item.id = item.id.toString()
-    clean(item)
-  })
+  return documents.data.map(item => clean(item))
 }
 
 /**
